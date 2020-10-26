@@ -1,4 +1,5 @@
-﻿using GoldenHand.ModelsDisplay;
+﻿using GoldenHand.Helpers;
+using GoldenHand.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,9 @@ namespace GoldenHand.Forms.Forms
     public partial class FormsForm : Form
     {
         private static FormsForm _instance = null;
+        private static IList<FormViewModel> formViewModelList;
 
+        #region Properties
         public static FormsForm Instance
         {
             get
@@ -28,30 +31,6 @@ namespace GoldenHand.Forms.Forms
                 return _instance;
             }
         }
-
-        private void Init()
-        {
-            var data = GoldenHandContext.Instance.Forms.ToList();
-            var formsDisplay = new List<FormDisplay>();
-            FormDisplay fd;
-
-            foreach (var d in data)
-            {
-                fd = new FormDisplay();
-                fd.FormId = d.FormId;
-                fd.Lp = d.Lp;
-                fd.SeniorName = d.Senior.Name;
-                fd.SeniorAddress = d.Senior.Address;
-                fd.SeniorPhoneNumber = d.Senior.PhoneNumber;
-                fd.FormStatusName = d.FormStatus.Name;
-                fd.WorkerName = d.Worker.Name;
-                fd.RegistrationDate = d.RegistrationDate;
-                fd.RepairDate = d.RepairDate;
-                formsDisplay.Add(fd);
-            }
-            dgForms.DataSource = formsDisplay;
-        }
-
         public static bool IsNull
         {
             get
@@ -63,14 +42,32 @@ namespace GoldenHand.Forms.Forms
                 return false;
             }
         }
+        #endregion
+
+        #region PrivateMethods
+        private void Init()
+        {
+            formViewModelList = MappingHelper.MapFormModelToFormViewModel(GoldenHandContext.Instance.Forms.ToList());
+
+
+            var formsSorted = formViewModelList.OrderBy(x => x.RegistrationDate).ToList();
+
+            bsForms.DataSource = new BindingList<FormViewModel>(formsSorted);
+            dgForms.DataSource = bsForms;
+        }
+
+
         private FormsForm()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Events
         private void FormsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             _instance = null;
         }
+        #endregion
     }
 }

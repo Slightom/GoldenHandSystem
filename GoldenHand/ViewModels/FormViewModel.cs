@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoldenHand.ModelsDisplay
+namespace GoldenHand.ViewModels
 {
-    public class FormDisplay
+    public class FormViewModel
     {
         public int FormId { get; set; }
         public int Lp { get; set; }
@@ -18,5 +18,6 @@ namespace GoldenHand.ModelsDisplay
         public string Info { get; set; }
         public DateTime RegistrationDate { get; set; }
         public DateTime RepairDate { get; set; }
+
     }
 }

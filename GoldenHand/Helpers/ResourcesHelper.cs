@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoldenHand.Helper
+namespace GoldenHand.Helpers
 {
     public class ResourcesHelper
     {

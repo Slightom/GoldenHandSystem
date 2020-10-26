@@ -80,13 +80,14 @@
     <Compile Include="Forms\Seniors\SeniorsForm.Designer.cs">
       <DependentUpon>SeniorsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper\ResourcesHelper.cs" />
+    <Compile Include="Helpers\MappingHelper.cs" />
+    <Compile Include="Helpers\ResourcesHelper.cs" />
     <Compile Include="Migrations\202010251247514_init.cs" />
     <Compile Include="Migrations\202010251247514_init.Designer.cs">
       <DependentUpon>202010251247514_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="ModelsDisplay\FormDisplay.cs" />
+    <Compile Include="ViewModels\FormViewModel.cs" />
     <Compile Include="Models\Form.cs" />
     <Compile Include="Models\FormStatus.cs" />
     <Compile Include="GoldenHandContext.cs" />
@@ -117,6 +118,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\GoldenHand.ModelsDisplay.FormDisplay.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -144,6 +146,63 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email_24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrganizationalUnits_32.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Positions_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salary_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Database_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Departments_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dismiss_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dismiss_241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_241.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
