@@ -1,7 +1,9 @@
-﻿using System;
+﻿using GoldenHand.ModelsDisplay;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,12 +20,36 @@ namespace GoldenHand.Forms.Forms
         {
             get
             {
-                if(_instance == null)
+                if (_instance == null)
                 {
                     _instance = new FormsForm();
                 }
+                _instance.Init();
                 return _instance;
             }
+        }
+
+        private void Init()
+        {
+            var data = GoldenHandContext.Instance.Forms.ToList();
+            var formsDisplay = new List<FormDisplay>();
+            FormDisplay fd;
+
+            foreach (var d in data)
+            {
+                fd = new FormDisplay();
+                fd.FormId = d.FormId;
+                fd.Lp = d.Lp;
+                fd.SeniorName = d.Senior.Name;
+                fd.SeniorAddress = d.Senior.Address;
+                fd.SeniorPhoneNumber = d.Senior.PhoneNumber;
+                fd.FormStatusName = d.FormStatus.Name;
+                fd.WorkerName = d.Worker.Name;
+                fd.RegistrationDate = d.RegistrationDate;
+                fd.RepairDate = d.RepairDate;
+                formsDisplay.Add(fd);
+            }
+            dgForms.DataSource = formsDisplay;
         }
 
         public static bool IsNull

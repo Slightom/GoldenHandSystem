@@ -51,7 +51,7 @@
             this.tcMain.Location = new System.Drawing.Point(0, 0);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(874, 70);
+            this.tcMain.Size = new System.Drawing.Size(1184, 70);
             this.tcMain.TabIndex = 0;
             // 
             // tpGeneral
@@ -62,7 +62,7 @@
             this.tpGeneral.Controls.Add(this.btnForms);
             this.tpGeneral.Location = new System.Drawing.Point(4, 26);
             this.tpGeneral.Name = "tpGeneral";
-            this.tpGeneral.Size = new System.Drawing.Size(866, 40);
+            this.tpGeneral.Size = new System.Drawing.Size(1176, 40);
             this.tpGeneral.TabIndex = 0;
             this.tpGeneral.Text = "Ogólne";
             // 
@@ -114,9 +114,9 @@
             // 
             // ssMain
             // 
-            this.ssMain.Location = new System.Drawing.Point(0, 539);
+            this.ssMain.Location = new System.Drawing.Point(0, 839);
             this.ssMain.Name = "ssMain";
-            this.ssMain.Size = new System.Drawing.Size(874, 22);
+            this.ssMain.Size = new System.Drawing.Size(1184, 22);
             this.ssMain.TabIndex = 1;
             this.ssMain.Text = "statusStrip1";
             // 
@@ -126,7 +126,7 @@
             this.panel1Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1Main.Location = new System.Drawing.Point(0, 70);
             this.panel1Main.Name = "panel1Main";
-            this.panel1Main.Size = new System.Drawing.Size(874, 469);
+            this.panel1Main.Size = new System.Drawing.Size(1184, 769);
             this.panel1Main.TabIndex = 2;
             // 
             // tcTabs
@@ -137,7 +137,7 @@
             this.tcTabs.Location = new System.Drawing.Point(0, 0);
             this.tcTabs.Name = "tcTabs";
             this.tcTabs.SelectedIndex = 0;
-            this.tcTabs.Size = new System.Drawing.Size(874, 469);
+            this.tcTabs.Size = new System.Drawing.Size(1184, 769);
             this.tcTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcTabs.TabIndex = 0;
             this.tcTabs.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TcTabs_DrawItem);
@@ -147,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 561);
+            this.ClientSize = new System.Drawing.Size(1184, 861);
             this.Controls.Add(this.panel1Main);
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.tcMain);

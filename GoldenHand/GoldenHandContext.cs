@@ -22,7 +22,7 @@ namespace GoldenHand
                 return _instance;
             }
         }
-        private GoldenHandContext() : base(nameOrConnectionString: "Default") { }
+        public GoldenHandContext() : base(nameOrConnectionString: "Default") { }
 
         public DbSet<Senior> Seniors { get; set; }
         public DbSet<Form> Forms { get; set; }

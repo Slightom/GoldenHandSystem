@@ -86,6 +86,7 @@
       <DependentUpon>202010251247514_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ModelsDisplay\FormDisplay.cs" />
     <Compile Include="Models\Form.cs" />
     <Compile Include="Models\FormStatus.cs" />
     <Compile Include="GoldenHandContext.cs" />
