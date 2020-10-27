@@ -82,6 +82,12 @@
     <Compile Include="Forms\Forms\FormAddForm.Designer.cs">
       <DependentUpon>FormAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Forms\FormEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\FormEditForm.Designer.cs">
+      <DependentUpon>FormEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Forms\FormsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Forms\FormAddForm.resx">
       <DependentUpon>FormAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\FormEditForm.resx">
+      <DependentUpon>FormEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Forms\FormsForm.resx">
       <DependentUpon>FormsForm.cs</DependentUpon>

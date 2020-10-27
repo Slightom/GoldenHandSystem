@@ -36,7 +36,7 @@
             this.btnModify = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.dgForms = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSenior = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,6 +95,7 @@
             this.btnRefresh.Text = "Odświerz";
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnRemove
             // 
@@ -110,6 +111,7 @@
             this.btnRemove.Text = "Usuń";
             this.btnRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnModify
             // 
@@ -125,6 +127,7 @@
             this.btnModify.Text = "Modyfikuj";
             this.btnModify.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModify.UseVisualStyleBackColor = false;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnCreate
             // 
@@ -151,7 +154,7 @@
             this.dgForms.BackgroundColor = System.Drawing.Color.White;
             this.dgForms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgForms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
+            this.FormId,
             this.colLp,
             this.colSenior,
             this.colAddress,
@@ -170,14 +173,15 @@
             this.dgForms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgForms.Size = new System.Drawing.Size(1178, 815);
             this.dgForms.TabIndex = 1;
+            this.dgForms.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.columnheaderClicked);
             // 
-            // colId
+            // FormId
             // 
-            this.colId.DataPropertyName = "FormId";
-            this.colId.HeaderText = "FormId";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
+            this.FormId.DataPropertyName = "FormId";
+            this.FormId.HeaderText = "FormId";
+            this.FormId.Name = "FormId";
+            this.FormId.ReadOnly = true;
+            this.FormId.Visible = false;
             // 
             // colLp
             // 
@@ -297,7 +301,7 @@
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.DataGridView dgForms;
         private System.Windows.Forms.BindingSource bsForms;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FormId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLp;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSenior;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAddress;

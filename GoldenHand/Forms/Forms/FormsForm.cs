@@ -17,6 +17,7 @@ namespace GoldenHand.Forms.Forms
     {
         private static FormsForm _instance = null;
         private static IList<FormViewModel> formViewModelList;
+        private bool isSortAscending = true;
 
         #region Properties
         public static FormsForm Instance
@@ -50,7 +51,7 @@ namespace GoldenHand.Forms.Forms
             formViewModelList = MappingHelper.MapFormModelToFormViewModel(GoldenHandContext.Instance.Forms.ToList());
 
 
-            var formsSorted = formViewModelList.OrderBy(x => x.RegistrationDate).ToList();
+            var formsSorted = formViewModelList.OrderByDescending(x => x.RegistrationDate) .ToList();
 
             bsForms.DataSource = new BindingList<FormViewModel>(formsSorted);
             dgForms.DataSource = bsForms;
@@ -79,8 +80,64 @@ namespace GoldenHand.Forms.Forms
             };
             frm.ShowDialog();
         }
+
         #endregion
 
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgForms.CurrentRow.Cells["FormId"].Value);
+            int selectedRowIndex = dgForms.CurrentRow.Index;
+            FormEditForm frm = new FormEditForm(id);
+            frm.ReloadForms += (s, ea) =>
+            {
+                Init();
+                dgForms.ClearSelection();
+                dgForms.Rows[selectedRowIndex].Selected = true;
+            };
+            frm.ShowDialog();
+        }
 
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgForms.CurrentRow.Cells["FormId"].Value);
+            int selectedRowIndex = dgForms.CurrentRow.Index;
+
+            const string message = "Na pewno chcesz usunąć ten formularz?";
+            const string caption = "Potwierdzenie usunięcia";
+            var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Question);
+
+
+            if (result == DialogResult.Yes)
+            {
+                GoldenHandContext.Instance.Forms.Remove(GoldenHandContext.Instance.Forms.Where(x => x.FormId == id).FirstOrDefault());
+                GoldenHandContext.Instance.SaveChanges();
+                Init();
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Init();
+        }
+
+        private void columnheaderClicked(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewColumn col = dgForms.Columns[e.ColumnIndex];
+
+            isSortAscending = !isSortAscending;
+
+            var pi = typeof(FormViewModel).GetProperty(col.DataPropertyName);
+            List<FormViewModel> sortedList;
+            sortedList = formViewModelList.OrderBy(x => pi.GetValue(x, null)).ToList();
+
+            if (!isSortAscending)
+                sortedList.Reverse();
+
+
+            bsForms.DataSource = new BindingList<FormViewModel>(sortedList);
+            dgForms.DataSource = bsForms;
+        }
     }
 }

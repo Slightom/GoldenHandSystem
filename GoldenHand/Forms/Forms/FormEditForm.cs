@@ -11,21 +11,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Form = GoldenHand.Models.Form;
 
 namespace GoldenHand.Forms.Forms
 {
-    public partial class FormAddForm : BaseAddEditForm
+    public partial class FormEditForm : BaseAddEditForm
     {
         public EventHandler ReloadForms;
+        private Form form;
 
-
-        public FormAddForm()
+        public FormEditForm(int formId)
         {
+            form = GetForm(formId);
             InitializeComponent();
             InitializeData();
+            PrepareFormData(form);
         }
 
+        private void PrepareFormData(Form form)
+        {
+            txtLp.Text = form.Lp.ToString();
+            txtInfo.Text = form.Info;
+            dtRegistDate.Value = form.RegistrationDate;
+            dtRepairDate.Value = form.RepairDate;
+            comboStatus.SelectedValue = form.FormStatus.FormStatusId;
+            comboSenior.SelectedValue = form.SeniorId;
+            comboWorker.SelectedValue = form.WorkerId;
+        }
+
+
+
         #region PrivateMethods
+        private Form GetForm(int formId)
+        {
+            return GoldenHandContext.Instance.Forms.Where(x => x.FormId == formId).FirstOrDefault();
+        }
         private bool ValidateControls()
         {
             ValidateDateRepair();
@@ -92,7 +112,7 @@ namespace GoldenHand.Forms.Forms
             bsWorkers.DataSource = workers;
         }
         #endregion
-
+       
         #region Events
         private void txtLp_Validated(object sender, EventArgs e)
         {
@@ -100,7 +120,7 @@ namespace GoldenHand.Forms.Forms
             int lp = Int32.Parse(txtLp.Text);
             foreach (var f in GoldenHandContext.Instance.Forms)
             {
-                if (f.Lp == lp)
+                if (f.Lp == lp && lp != form.FormId)
                 {
                     LpAlreadyUsed = true;
                     break;
@@ -142,20 +162,19 @@ namespace GoldenHand.Forms.Forms
         #region Overridemethods
         protected override void Save()
         {
-            Models.Form f = new Models.Form();
-            f.Lp = Int32.Parse(txtLp.Text);
-            f.Info = txtInfo.Text;
-            f.FormStatusId = Int32.Parse(comboStatus.SelectedValue.ToString());
-            f.SeniorId = Int32.Parse(comboSenior.SelectedValue.ToString());
-            f.WorkerId = Int32.Parse(comboWorker.SelectedValue.ToString());
-            f.RegistrationDate = new DateTime(dtRegistDate.Value.Year, dtRegistDate.Value.Month, dtRegistDate.Value.Day);           
-            f.RepairDate = new DateTime(dtRepairDate.Value.Year, dtRepairDate.Value.Month, dtRepairDate.Value.Day);
+            Form newForm = GoldenHandContext.Instance.Forms.Where(x => x.FormId == form.FormId).FirstOrDefault();
+            newForm.Lp = Int32.Parse(txtLp.Text);
+            newForm.Info = txtInfo.Text;
+            newForm.FormStatusId = Int32.Parse(comboStatus.SelectedValue.ToString());
+            newForm.SeniorId = Int32.Parse(comboSenior.SelectedValue.ToString());
+            newForm.WorkerId = Int32.Parse(comboWorker.SelectedValue.ToString());
+            newForm.RegistrationDate = new DateTime(dtRegistDate.Value.Year, dtRegistDate.Value.Month, dtRegistDate.Value.Day);
+            newForm.RepairDate = new DateTime(dtRepairDate.Value.Year, dtRepairDate.Value.Month, dtRepairDate.Value.Day);
 
-            GoldenHandContext.Instance.Forms.Add(f);
             GoldenHandContext.Instance.SaveChanges();
-            MessageBox.Show("Dodano formularz.");
+            MessageBox.Show("Zapisano zmiany.");
 
-            ReloadForms?.Invoke(btnSave, new FormEventArgs(f));
+            ReloadForms?.Invoke(btnSave, new FormEventArgs(newForm));
             Close();
         }
         protected override void Cancel()
@@ -163,5 +182,6 @@ namespace GoldenHand.Forms.Forms
             Close();
         }
         #endregion
+
     }
 }
