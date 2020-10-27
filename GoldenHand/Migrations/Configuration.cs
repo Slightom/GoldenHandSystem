@@ -55,10 +55,11 @@ namespace GoldenHand.Migrations
 
             #region seniors
             Senior s = new Senior();
-            s.Address = "Kar³owicz 34";
+            s.Address = "Kar³owicza 34";
             s.Name = "Eugeniusz Konaszewski";
             s.PhoneNumber = "587 564 675";
             s.SeniorId = 0;
+            s.SeniorShortcut = "Eugeniusz Konaszewski, Kar³owicza 34";
             c.Seniors.AddOrUpdate(s);
 
             s = new Senior();
@@ -66,6 +67,7 @@ namespace GoldenHand.Migrations
             s.Name = "Jan Kokoszko";
             s.PhoneNumber = "676543323";
             s.SeniorId = 1;
+            s.SeniorShortcut = "Jan Kokoszko, Hallera 20/22";
             c.Seniors.AddOrUpdate(s);
 
             s = new Senior();
@@ -73,6 +75,7 @@ namespace GoldenHand.Migrations
             s.Name = "Nadzieja Ostatnia";
             s.PhoneNumber = "87 567 890";
             s.SeniorId = 2;
+            s.SeniorShortcut = "Nadzieje Ostatnia, Waszyngtona 43/98";
             c.Seniors.AddOrUpdate(s);
 
             s = new Senior();
@@ -80,6 +83,7 @@ namespace GoldenHand.Migrations
             s.Name = "Luba Niemoja";
             s.PhoneNumber = "85 765 432";
             s.SeniorId = 3;
+            s.SeniorShortcut = "Luba Niemoja, Konopnickiej 78/4";
             c.Seniors.AddOrUpdate(s);
             c.SaveChanges();
             #endregion

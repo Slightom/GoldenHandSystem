@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.tlpForms = new System.Windows.Forms.TableLayoutPanel();
             this.pForms = new System.Windows.Forms.Panel();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.btnModify = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.dgForms = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLp = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,35 +81,20 @@
             this.pForms.Size = new System.Drawing.Size(1178, 34);
             this.pForms.TabIndex = 0;
             // 
-            // btnCreate
+            // btnRefresh
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.White;
-            this.btnCreate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCreate.Image = global::GoldenHand.Properties.Resources.add_24;
-            this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreate.Location = new System.Drawing.Point(0, 0);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(90, 34);
-            this.btnCreate.TabIndex = 0;
-            this.btnCreate.Text = "Dodaj";
-            this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreate.UseVisualStyleBackColor = false;
-            // 
-            // btnModify
-            // 
-            this.btnModify.BackColor = System.Drawing.Color.White;
-            this.btnModify.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnModify.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnModify.Image = global::GoldenHand.Properties.Resources.edit_24;
-            this.btnModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModify.Location = new System.Drawing.Point(90, 0);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(105, 34);
-            this.btnModify.TabIndex = 1;
-            this.btnModify.Text = "Modyfikuj";
-            this.btnModify.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModify.UseVisualStyleBackColor = false;
+            this.btnRefresh.BackColor = System.Drawing.Color.White;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRefresh.Image = global::GoldenHand.Properties.Resources.refresh_24;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(285, 0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(105, 34);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Odświerz";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
             // 
             // btnRemove
             // 
@@ -126,20 +111,36 @@
             this.btnRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRemove.UseVisualStyleBackColor = false;
             // 
-            // btnRefresh
+            // btnModify
             // 
-            this.btnRefresh.BackColor = System.Drawing.Color.White;
-            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRefresh.Image = global::GoldenHand.Properties.Resources.refresh_24;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.Location = new System.Drawing.Point(285, 0);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(105, 34);
-            this.btnRefresh.TabIndex = 4;
-            this.btnRefresh.Text = "Odświerz";
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnModify.BackColor = System.Drawing.Color.White;
+            this.btnModify.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnModify.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnModify.Image = global::GoldenHand.Properties.Resources.edit_24;
+            this.btnModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModify.Location = new System.Drawing.Point(90, 0);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(105, 34);
+            this.btnModify.TabIndex = 1;
+            this.btnModify.Text = "Modyfikuj";
+            this.btnModify.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModify.UseVisualStyleBackColor = false;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.BackColor = System.Drawing.Color.White;
+            this.btnCreate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCreate.Image = global::GoldenHand.Properties.Resources.add_24;
+            this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreate.Location = new System.Drawing.Point(0, 0);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(90, 34);
+            this.btnCreate.TabIndex = 0;
+            this.btnCreate.Text = "Dodaj";
+            this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // dgForms
             // 

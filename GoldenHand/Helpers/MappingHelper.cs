@@ -20,6 +20,7 @@ namespace GoldenHand.Helpers
                 fd = new FormViewModel();
                 fd.FormId = d.FormId;
                 fd.Lp = d.Lp;
+                fd.Info = d.Info;
                 fd.SeniorName = d.Senior.Name;
                 fd.SeniorAddress = d.Senior.Address;
                 fd.SeniorPhoneNumber = d.Senior.PhoneNumber;

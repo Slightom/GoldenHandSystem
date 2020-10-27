@@ -68,6 +68,19 @@ namespace GoldenHand.Forms.Forms
         {
             _instance = null;
         }
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            FormAddForm frm = new FormAddForm();
+            frm.ReloadForms += (s, ea) =>
+            {
+                Init();
+                dgForms.ClearSelection();
+                dgForms.Rows[0].Selected = true;
+            };
+            frm.ShowDialog();
+        }
         #endregion
+
+
     }
 }
