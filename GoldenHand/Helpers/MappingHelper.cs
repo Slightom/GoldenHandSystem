@@ -33,5 +33,30 @@ namespace GoldenHand.Helpers
 
             return formViewModels;
         }
+
+        public static IList<SeniorViewModel> MapSeniorModelToSeniorViewModel(List<Senior> seniorList)
+        {
+            IList<SeniorViewModel> seniorViewModels = new List<SeniorViewModel>();
+            SeniorViewModel sv;
+            List<Form> seniorForms;
+
+            foreach(var s in seniorList)
+            {
+                sv = new SeniorViewModel();
+                sv.SeniorId = s.SeniorId;
+                sv.Name = s.Name;
+                sv.Address = s.Address;
+                sv.PhoneNumber = s.PhoneNumber;
+                sv.SeniorShortcut = s.SeniorShortcut;
+                seniorForms = GoldenHandContext.Instance.Forms.Where(x => x.SeniorId == s.SeniorId).ToList();
+                sv.FormsAll = seniorForms.Count();
+                sv.FormsFinished = seniorForms.Where(x => x.FormStatus.Name == Helpers.FormStatusName.FINISHED).Count();
+                sv.FormsRegisted = seniorForms.Where(x => x.FormStatus.Name == Helpers.FormStatusName.REGISTED).Count();
+                sv.FormsRejected = seniorForms.Where(x => x.FormStatus.Name == Helpers.FormStatusName.REJECTED).Count();
+                seniorViewModels.Add(sv);
+            }
+
+            return seniorViewModels;
+        }
     }
 }

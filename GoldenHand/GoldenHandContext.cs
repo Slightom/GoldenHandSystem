@@ -15,7 +15,7 @@ namespace GoldenHand
         {
             get
             {
-                if(_instance == null)
+                if (_instance == null)
                 {
                     _instance = new GoldenHandContext();
                 }
@@ -27,7 +27,8 @@ namespace GoldenHand
         public DbSet<Senior> Seniors { get; set; }
         public DbSet<Form> Forms { get; set; }
         public DbSet<Worker> Workers { get; set; }
-        public DbSet<FormStatus> FormStatuses{ get; set; }
+        public DbSet<FormStatus> FormStatuses { get; set; }
+        public DbSet<Bill> Bills { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

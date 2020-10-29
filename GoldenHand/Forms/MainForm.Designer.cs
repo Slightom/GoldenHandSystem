@@ -30,6 +30,8 @@
         {
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.btnSummary = new System.Windows.Forms.Button();
+            this.btnBills = new System.Windows.Forms.Button();
             this.btnSeniors = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.btnForms = new System.Windows.Forms.Button();
@@ -57,6 +59,8 @@
             // tpGeneral
             // 
             this.tpGeneral.BackColor = System.Drawing.Color.White;
+            this.tpGeneral.Controls.Add(this.btnSummary);
+            this.tpGeneral.Controls.Add(this.btnBills);
             this.tpGeneral.Controls.Add(this.btnSeniors);
             this.tpGeneral.Controls.Add(this.splitter1);
             this.tpGeneral.Controls.Add(this.btnForms);
@@ -65,6 +69,35 @@
             this.tpGeneral.Size = new System.Drawing.Size(1176, 40);
             this.tpGeneral.TabIndex = 0;
             this.tpGeneral.Text = "Ogólne";
+            // 
+            // btnSummary
+            // 
+            this.btnSummary.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSummary.Image = global::GoldenHand.Properties.Resources.Salary_32;
+            this.btnSummary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSummary.Location = new System.Drawing.Point(363, 0);
+            this.btnSummary.Name = "btnSummary";
+            this.btnSummary.Size = new System.Drawing.Size(138, 40);
+            this.btnSummary.TabIndex = 4;
+            this.btnSummary.Text = "Podsumowanie";
+            this.btnSummary.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSummary.UseVisualStyleBackColor = true;
+            this.btnSummary.Click += new System.EventHandler(this.btnSummary_Click);
+            // 
+            // btnBills
+            // 
+            this.btnBills.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBills.Image = global::GoldenHand.Properties.Resources.Contracts_32;
+            this.btnBills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBills.Location = new System.Drawing.Point(243, 0);
+            this.btnBills.Name = "btnBills";
+            this.btnBills.Size = new System.Drawing.Size(120, 40);
+            this.btnBills.TabIndex = 3;
+            this.btnBills.Text = "Faktury";
+            this.btnBills.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBills.UseVisualStyleBackColor = true;
+            this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
+            this.btnBills.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnBills_Click);
             // 
             // btnSeniors
             // 
@@ -107,7 +140,7 @@
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(866, 40);
+            this.tabPage2.Size = new System.Drawing.Size(1176, 40);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -175,5 +208,7 @@
         private System.Windows.Forms.Button btnForms;
         private System.Windows.Forms.Panel panel1Main;
         private System.Windows.Forms.TabControl tcTabs;
+        private System.Windows.Forms.Button btnBills;
+        private System.Windows.Forms.Button btnSummary;
     }
 }

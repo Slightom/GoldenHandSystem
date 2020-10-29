@@ -1,6 +1,6 @@
 ﻿using GoldenHand.Classes;
 using GoldenHand.Extensions;
-using GoldenHand.Forms.Forms.Base;
+using GoldenHand.Forms.Base;
 using GoldenHand.Models;
 using System;
 using System.Collections.Generic;

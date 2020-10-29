@@ -1,6 +1,6 @@
 ﻿using GoldenHand.Classes;
 using GoldenHand.Extensions;
-using GoldenHand.Forms.Forms.Base;
+using GoldenHand.Forms.Base;
 using GoldenHand.Models;
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BaseAddEditForm = GoldenHand.Forms.Base.BaseAddEditForm;
 using Form = GoldenHand.Models.Form;
 
 namespace GoldenHand.Forms.Forms

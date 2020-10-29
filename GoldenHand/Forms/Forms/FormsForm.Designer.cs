@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpForms = new System.Windows.Forms.TableLayoutPanel();
             this.pForms = new System.Windows.Forms.Panel();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -36,6 +40,7 @@
             this.btnModify = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.dgForms = new System.Windows.Forms.DataGridView();
+            this.Nr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FormId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSenior = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +71,7 @@
             this.tlpForms.RowCount = 2;
             this.tlpForms.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpForms.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpForms.Size = new System.Drawing.Size(1184, 861);
+            this.tlpForms.Size = new System.Drawing.Size(711, 350);
             this.tlpForms.TabIndex = 0;
             // 
             // pForms
@@ -78,7 +83,7 @@
             this.pForms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pForms.Location = new System.Drawing.Point(3, 3);
             this.pForms.Name = "pForms";
-            this.pForms.Size = new System.Drawing.Size(1178, 34);
+            this.pForms.Size = new System.Drawing.Size(705, 34);
             this.pForms.TabIndex = 0;
             // 
             // btnRefresh
@@ -151,9 +156,20 @@
             this.dgForms.AllowUserToDeleteRows = false;
             this.dgForms.AllowUserToOrderColumns = true;
             this.dgForms.AutoGenerateColumns = false;
+            this.dgForms.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgForms.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgForms.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 18F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgForms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgForms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgForms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nr,
             this.FormId,
             this.colLp,
             this.colSenior,
@@ -165,15 +181,47 @@
             this.colRepairDate,
             this.colInfo});
             this.dgForms.DataSource = this.bsForms;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgForms.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgForms.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgForms.EnableHeadersVisualStyles = false;
             this.dgForms.Location = new System.Drawing.Point(3, 43);
             this.dgForms.Name = "dgForms";
             this.dgForms.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgForms.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgForms.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2, 5, 2, 5);
+            this.dgForms.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgForms.RowTemplate.Height = 28;
+            this.dgForms.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgForms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgForms.Size = new System.Drawing.Size(1178, 815);
+            this.dgForms.Size = new System.Drawing.Size(705, 304);
             this.dgForms.TabIndex = 1;
             this.dgForms.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.columnheaderClicked);
+            this.dgForms.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgForms_RowPostPaint);
+            // 
+            // Nr
+            // 
+            this.Nr.FillWeight = 81.51305F;
+            this.Nr.HeaderText = "Nr";
+            this.Nr.Name = "Nr";
+            this.Nr.ReadOnly = true;
+            this.Nr.Width = 66;
             // 
             // FormId
             // 
@@ -182,15 +230,16 @@
             this.FormId.Name = "FormId";
             this.FormId.ReadOnly = true;
             this.FormId.Visible = false;
+            this.FormId.Width = 115;
             // 
             // colLp
             // 
-            this.colLp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colLp.DataPropertyName = "Lp";
+            this.colLp.FillWeight = 118.5797F;
             this.colLp.HeaderText = "Lp";
             this.colLp.Name = "colLp";
             this.colLp.ReadOnly = true;
-            this.colLp.Width = 44;
+            this.colLp.Width = 65;
             // 
             // colSenior
             // 
@@ -200,7 +249,7 @@
             this.colSenior.Name = "colSenior";
             this.colSenior.ReadOnly = true;
             this.colSenior.ToolTipText = "Imię, nazwisko Seniora";
-            this.colSenior.Width = 62;
+            this.colSenior.Width = 108;
             // 
             // colAddress
             // 
@@ -210,17 +259,15 @@
             this.colAddress.Name = "colAddress";
             this.colAddress.ReadOnly = true;
             this.colAddress.ToolTipText = "Adres Seniora";
-            this.colAddress.Width = 59;
             // 
             // colPhone
             // 
-            this.colPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colPhone.DataPropertyName = "SeniorPhoneNumber";
             this.colPhone.HeaderText = "Telefon";
             this.colPhone.Name = "colPhone";
             this.colPhone.ReadOnly = true;
             this.colPhone.ToolTipText = "Nr telefonu Seniora";
-            this.colPhone.Width = 68;
+            this.colPhone.Width = 119;
             // 
             // colStatus
             // 
@@ -230,7 +277,7 @@
             this.colStatus.Name = "colStatus";
             this.colStatus.ReadOnly = true;
             this.colStatus.ToolTipText = "Status formularza";
-            this.colStatus.Width = 62;
+            this.colStatus.Width = 104;
             // 
             // colPracownik
             // 
@@ -240,7 +287,7 @@
             this.colPracownik.Name = "colPracownik";
             this.colPracownik.ReadOnly = true;
             this.colPracownik.ToolTipText = "Imię, nazwisko pracownika";
-            this.colPracownik.Width = 82;
+            this.colPracownik.Width = 147;
             // 
             // colRegistDate
             // 
@@ -250,6 +297,7 @@
             this.colRegistDate.Name = "colRegistDate";
             this.colRegistDate.ReadOnly = true;
             this.colRegistDate.ToolTipText = "Data zgłoszenia zlecenia";
+            this.colRegistDate.Width = 208;
             // 
             // colRepairDate
             // 
@@ -259,12 +307,13 @@
             this.colRepairDate.Name = "colRepairDate";
             this.colRepairDate.ReadOnly = true;
             this.colRepairDate.ToolTipText = "Proponowana data wykonania naprawy";
-            this.colRepairDate.Width = 90;
+            this.colRepairDate.Width = 185;
             // 
             // colInfo
             // 
             this.colInfo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colInfo.DataPropertyName = "Info";
+            this.colInfo.FillWeight = 99.90723F;
             this.colInfo.HeaderText = "Informacje";
             this.colInfo.Name = "colInfo";
             this.colInfo.ReadOnly = true;
@@ -278,7 +327,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 861);
+            this.ClientSize = new System.Drawing.Size(711, 350);
             this.Controls.Add(this.tlpForms);
             this.Name = "FormsForm";
             this.Text = "Formularze";
@@ -301,6 +350,7 @@
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.DataGridView dgForms;
         private System.Windows.Forms.BindingSource bsForms;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nr;
         private System.Windows.Forms.DataGridViewTextBoxColumn FormId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLp;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSenior;

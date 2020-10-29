@@ -81,25 +81,27 @@
             this.gbGeneral.Controls.Add(this.lblLp);
             this.gbGeneral.Location = new System.Drawing.Point(45, 89);
             this.gbGeneral.Name = "gbGeneral";
-            this.gbGeneral.Size = new System.Drawing.Size(840, 389);
+            this.gbGeneral.Size = new System.Drawing.Size(840, 426);
             this.gbGeneral.TabIndex = 0;
             this.gbGeneral.TabStop = false;
             this.gbGeneral.Text = "Dane";
             // 
             // txtLp
             // 
-            this.txtLp.Location = new System.Drawing.Point(178, 48);
+            this.txtLp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtLp.Location = new System.Drawing.Point(171, 56);
             this.txtLp.Name = "txtLp";
-            this.txtLp.Size = new System.Drawing.Size(172, 20);
+            this.txtLp.Size = new System.Drawing.Size(172, 29);
             this.txtLp.TabIndex = 16;
             this.txtLp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLp_KeyPress);
             this.txtLp.Validated += new System.EventHandler(this.txtLp_Validated);
             // 
             // btnCancel
             // 
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnCancel.Image = global::GoldenHand.Properties.Resources.dismiss_24;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(302, 315);
+            this.btnCancel.Location = new System.Drawing.Point(295, 353);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(127, 42);
             this.btnCancel.TabIndex = 15;
@@ -110,9 +112,10 @@
             // 
             // btnSave
             // 
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSave.Image = global::GoldenHand.Properties.Resources.add_241;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(178, 315);
+            this.btnSave.Location = new System.Drawing.Point(171, 353);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(118, 42);
             this.btnSave.TabIndex = 14;
@@ -123,7 +126,8 @@
             // 
             // txtInfo
             // 
-            this.txtInfo.Location = new System.Drawing.Point(178, 216);
+            this.txtInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtInfo.Location = new System.Drawing.Point(171, 264);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
             this.txtInfo.Size = new System.Drawing.Size(251, 74);
@@ -132,20 +136,22 @@
             // dtRepairDate
             // 
             this.dtRepairDate.CustomFormat = " ";
+            this.dtRepairDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dtRepairDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtRepairDate.Location = new System.Drawing.Point(178, 179);
+            this.dtRepairDate.Location = new System.Drawing.Point(171, 229);
             this.dtRepairDate.Name = "dtRepairDate";
-            this.dtRepairDate.Size = new System.Drawing.Size(251, 20);
+            this.dtRepairDate.Size = new System.Drawing.Size(251, 29);
             this.dtRepairDate.TabIndex = 12;
             this.dtRepairDate.ValueChanged += new System.EventHandler(this.dtRepair_ValueChanged);
             // 
             // dtRegistDate
             // 
             this.dtRegistDate.CustomFormat = " ";
+            this.dtRegistDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dtRegistDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtRegistDate.Location = new System.Drawing.Point(178, 153);
+            this.dtRegistDate.Location = new System.Drawing.Point(171, 194);
             this.dtRegistDate.Name = "dtRegistDate";
-            this.dtRegistDate.Size = new System.Drawing.Size(251, 20);
+            this.dtRegistDate.Size = new System.Drawing.Size(251, 29);
             this.dtRegistDate.TabIndex = 11;
             this.dtRegistDate.ValueChanged += new System.EventHandler(this.dt_ValueChanged);
             // 
@@ -153,10 +159,11 @@
             // 
             this.comboStatus.DataSource = this.bsStatus;
             this.comboStatus.DisplayMember = "Name";
+            this.comboStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboStatus.FormattingEnabled = true;
-            this.comboStatus.Location = new System.Drawing.Point(178, 128);
+            this.comboStatus.Location = new System.Drawing.Point(171, 159);
             this.comboStatus.Name = "comboStatus";
-            this.comboStatus.Size = new System.Drawing.Size(172, 21);
+            this.comboStatus.Size = new System.Drawing.Size(172, 29);
             this.comboStatus.TabIndex = 10;
             this.comboStatus.ValueMember = "FormStatusId";
             // 
@@ -168,10 +175,11 @@
             // 
             this.comboWorker.DataSource = this.bsWorkers;
             this.comboWorker.DisplayMember = "Name";
+            this.comboWorker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboWorker.FormattingEnabled = true;
-            this.comboWorker.Location = new System.Drawing.Point(178, 101);
+            this.comboWorker.Location = new System.Drawing.Point(171, 124);
             this.comboWorker.Name = "comboWorker";
-            this.comboWorker.Size = new System.Drawing.Size(251, 21);
+            this.comboWorker.Size = new System.Drawing.Size(251, 29);
             this.comboWorker.TabIndex = 9;
             this.comboWorker.ValueMember = "WorkerId";
             // 
@@ -183,10 +191,11 @@
             // 
             this.comboSenior.DataSource = this.bsSeniors;
             this.comboSenior.DisplayMember = "SeniorShortcut";
+            this.comboSenior.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboSenior.FormattingEnabled = true;
-            this.comboSenior.Location = new System.Drawing.Point(178, 74);
+            this.comboSenior.Location = new System.Drawing.Point(171, 91);
             this.comboSenior.Name = "comboSenior";
-            this.comboSenior.Size = new System.Drawing.Size(251, 21);
+            this.comboSenior.Size = new System.Drawing.Size(251, 29);
             this.comboSenior.TabIndex = 8;
             this.comboSenior.ValueMember = "SeniorId";
             // 
@@ -197,70 +206,70 @@
             // lblWorker
             // 
             this.lblWorker.AutoSize = true;
-            this.lblWorker.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblWorker.Location = new System.Drawing.Point(67, 105);
+            this.lblWorker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblWorker.Location = new System.Drawing.Point(34, 127);
             this.lblWorker.Name = "lblWorker";
-            this.lblWorker.Size = new System.Drawing.Size(71, 17);
+            this.lblWorker.Size = new System.Drawing.Size(90, 21);
             this.lblWorker.TabIndex = 6;
             this.lblWorker.Text = "Pracownik";
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblStatus.Location = new System.Drawing.Point(67, 132);
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblStatus.Location = new System.Drawing.Point(33, 162);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(46, 17);
+            this.lblStatus.Size = new System.Drawing.Size(57, 21);
             this.lblStatus.TabIndex = 5;
             this.lblStatus.Text = "Status";
             // 
             // lblRegistDate
             // 
             this.lblRegistDate.AutoSize = true;
-            this.lblRegistDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblRegistDate.Location = new System.Drawing.Point(67, 156);
+            this.lblRegistDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblRegistDate.Location = new System.Drawing.Point(34, 200);
             this.lblRegistDate.Name = "lblRegistDate";
-            this.lblRegistDate.Size = new System.Drawing.Size(105, 17);
+            this.lblRegistDate.Size = new System.Drawing.Size(131, 21);
             this.lblRegistDate.TabIndex = 4;
             this.lblRegistDate.Text = "Data zgłoszenia";
             // 
             // lblRepairDate
             // 
             this.lblRepairDate.AutoSize = true;
-            this.lblRepairDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblRepairDate.Location = new System.Drawing.Point(67, 179);
+            this.lblRepairDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblRepairDate.Location = new System.Drawing.Point(34, 235);
             this.lblRepairDate.Name = "lblRepairDate";
-            this.lblRepairDate.Size = new System.Drawing.Size(93, 17);
+            this.lblRepairDate.Size = new System.Drawing.Size(116, 21);
             this.lblRepairDate.TabIndex = 3;
             this.lblRepairDate.Text = "Data naprawy";
             // 
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblInfo.Location = new System.Drawing.Point(67, 216);
+            this.lblInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblInfo.Location = new System.Drawing.Point(34, 267);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(74, 17);
+            this.lblInfo.Size = new System.Drawing.Size(84, 21);
             this.lblInfo.TabIndex = 2;
             this.lblInfo.Text = "Informacje";
             // 
             // lblSenior
             // 
             this.lblSenior.AutoSize = true;
-            this.lblSenior.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblSenior.Location = new System.Drawing.Point(67, 78);
+            this.lblSenior.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSenior.Location = new System.Drawing.Point(34, 94);
             this.lblSenior.Name = "lblSenior";
-            this.lblSenior.Size = new System.Drawing.Size(47, 17);
+            this.lblSenior.Size = new System.Drawing.Size(59, 21);
             this.lblSenior.TabIndex = 1;
             this.lblSenior.Text = "Senior";
             // 
             // lblLp
             // 
             this.lblLp.AutoSize = true;
-            this.lblLp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblLp.Location = new System.Drawing.Point(67, 51);
+            this.lblLp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLp.Location = new System.Drawing.Point(33, 59);
             this.lblLp.Name = "lblLp";
-            this.lblLp.Size = new System.Drawing.Size(23, 17);
+            this.lblLp.Size = new System.Drawing.Size(28, 21);
             this.lblLp.TabIndex = 0;
             this.lblLp.Text = "Lp";
             // 

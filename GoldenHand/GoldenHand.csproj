@@ -62,19 +62,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\BillEventArgs.cs" />
     <Compile Include="Classes\FormEventArgs.cs" />
+    <Compile Include="Classes\SeniorEventArgs.cs" />
     <Compile Include="Extensions\ExtensionsMethods.cs" />
-    <Compile Include="Forms\Forms\Base\BaseAddEditForm.cs">
+    <Compile Include="Forms\Base\BaseAddEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Forms\Base\BaseAddEditForm.Designer.cs">
+    <Compile Include="Forms\Base\BaseAddEditForm.Designer.cs">
       <DependentUpon>BaseAddEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Forms\Base\BaseForm.cs">
+    <Compile Include="Forms\Base\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Forms\Base\BaseForm.Designer.cs">
+    <Compile Include="Forms\Base\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\BillAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Bills\BillAddForm.Designer.cs">
+      <DependentUpon>BillAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\BillEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Bills\BillEditForm.Designer.cs">
+      <DependentUpon>BillEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bills\BillsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Bills\BillsForm.Designer.cs">
+      <DependentUpon>BillsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Forms\FormAddForm.cs">
       <SubType>Form</SubType>
@@ -100,14 +120,40 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Seniors\SeniorAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Seniors\SeniorAddForm.Designer.cs">
+      <DependentUpon>SeniorAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Seniors\SeniorDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Seniors\SeniorDetailsForm.Designer.cs">
+      <DependentUpon>SeniorDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Seniors\SeniorEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Seniors\SeniorEditForm.Designer.cs">
+      <DependentUpon>SeniorEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Seniors\SeniorsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Seniors\SeniorsForm.Designer.cs">
       <DependentUpon>SeniorsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Summary\SummaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Summary\SummaryForm.Designer.cs">
+      <DependentUpon>SummaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FormStatusName.cs" />
     <Compile Include="Helpers\MappingHelper.cs" />
     <Compile Include="Helpers\ResourcesHelper.cs" />
+    <Compile Include="Helpers\Style.cs" />
     <Compile Include="Migrations\202010251247514_init.cs" />
     <Compile Include="Migrations\202010251247514_init.Designer.cs">
       <DependentUpon>202010251247514_init.cs</DependentUpon>
@@ -116,7 +162,12 @@
     <Compile Include="Migrations\202010261937544_seniorShortcut field added.Designer.cs">
       <DependentUpon>202010261937544_seniorShortcut field added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010281938554_Bill table added.cs" />
+    <Compile Include="Migrations\202010281938554_Bill table added.Designer.cs">
+      <DependentUpon>202010281938554_Bill table added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Bill.cs" />
     <Compile Include="ViewModels\FormViewModel.cs" />
     <Compile Include="Models\Form.cs" />
     <Compile Include="Models\FormStatus.cs" />
@@ -125,11 +176,21 @@
     <Compile Include="Models\Worker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Forms\Base\BaseAddEditForm.resx">
+    <Compile Include="ViewModels\SeniorViewModel.cs" />
+    <EmbeddedResource Include="Forms\Base\BaseAddEditForm.resx">
       <DependentUpon>BaseAddEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Forms\Base\BaseForm.resx">
+    <EmbeddedResource Include="Forms\Base\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Bills\BillAddForm.resx">
+      <DependentUpon>BillAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Bills\BillEditForm.resx">
+      <DependentUpon>BillEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Bills\BillsForm.resx">
+      <DependentUpon>BillsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Forms\FormAddForm.resx">
       <DependentUpon>FormAddForm.cs</DependentUpon>
@@ -143,14 +204,29 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Seniors\SeniorAddForm.resx">
+      <DependentUpon>SeniorAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Seniors\SeniorDetailsForm.resx">
+      <DependentUpon>SeniorDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Seniors\SeniorEditForm.resx">
+      <DependentUpon>SeniorEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Seniors\SeniorsForm.resx">
       <DependentUpon>SeniorsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Summary\SummaryForm.resx">
+      <DependentUpon>SummaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010251247514_init.resx">
       <DependentUpon>202010251247514_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010261937544_seniorShortcut field added.resx">
       <DependentUpon>202010261937544_seniorShortcut field added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010281938554_Bill table added.resx">
+      <DependentUpon>202010281938554_Bill table added.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -163,10 +239,13 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\GoldenHand.Models.Bill.datasource" />
     <None Include="Properties\DataSources\GoldenHand.Models.FormStatus.datasource" />
     <None Include="Properties\DataSources\GoldenHand.Models.Senior.datasource" />
     <None Include="Properties\DataSources\GoldenHand.Models.Worker.datasource" />
     <None Include="Properties\DataSources\GoldenHand.ModelsDisplay.FormDisplay.datasource" />
+    <None Include="Properties\DataSources\GoldenHand.ViewModels.FormViewModel.datasource" />
+    <None Include="Properties\DataSources\GoldenHand.ViewModels.SeniorViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

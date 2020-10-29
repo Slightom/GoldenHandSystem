@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using GoldenHand.Forms.Seniors;
 using System.Windows.Forms;
 using GoldenHand.Helpers;
+using GoldenHand.Forms.Bills;
+using GoldenHand.Forms.Summary;
 
 namespace GoldenHand.Forms
 {
@@ -18,6 +20,8 @@ namespace GoldenHand.Forms
         public GoldenHandContext _context;
         private TabPage _tpForms;
         private TabPage _tpSeniors;
+        private TabPage _tpBills;
+        private TabPage _tpSummary;
 
         public MainForm()
         {
@@ -55,6 +59,18 @@ namespace GoldenHand.Forms
             else
             {
                 tcTabs.SelectedTab = _tpSeniors;
+            }
+        }
+        private void btnBills_Click(object sender, EventArgs e)
+        {
+            if (BillsForm.IsNull)
+            {
+                _tpBills = new TabPage();
+                ShowFormInTabPage(BillsForm.Instance, _tpBills);
+            }
+            else
+            {
+                tcTabs.SelectedTab = _tpBills;
             }
         }
 
@@ -103,18 +119,29 @@ namespace GoldenHand.Forms
         #region privateMethods
         private void ShowFormInTabPage(Form frm, TabPage tpP)
         {
-            TabPage tpTab = new TabPage();
-            tcTabs.Controls.Add(tpTab);
+            tcTabs.Controls.Add(tpP);
 
-            tpTab.Text = frm.Text;
+            tpP.Text = frm.Text;
             frm.TopLevel = false;
             frm.Visible = true;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
-            tpTab.Controls.Add(frm);
-            tcTabs.SelectedTab = tpTab;
+            tpP.Controls.Add(frm);
+            tcTabs.SelectedTab = tpP;
         }
         #endregion
 
+        private void btnSummary_Click(object sender, EventArgs e)
+        {
+            if (SummaryForm.IsNull)
+            {
+                _tpSummary = new TabPage();
+                ShowFormInTabPage(SummaryForm.Instance, _tpSummary);
+            }
+            else
+            {
+                tcTabs.SelectedTab = _tpSummary;
+            }
+        }
     }
 }

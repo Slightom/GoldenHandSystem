@@ -17,7 +17,7 @@ namespace GoldenHand.Forms.Forms
     {
         private static FormsForm _instance = null;
         private static IList<FormViewModel> formViewModelList;
-        private bool isSortAscending = true;
+        private bool isSortAscending = false;
 
         #region Properties
         public static FormsForm Instance
@@ -55,6 +55,8 @@ namespace GoldenHand.Forms.Forms
 
             bsForms.DataSource = new BindingList<FormViewModel>(formsSorted);
             dgForms.DataSource = bsForms;
+
+            Style.StyleDataGrid(dgForms);
         }
 
 
@@ -80,8 +82,6 @@ namespace GoldenHand.Forms.Forms
             };
             frm.ShowDialog();
         }
-
-        #endregion
 
         private void btnModify_Click(object sender, EventArgs e)
         {
@@ -139,5 +139,11 @@ namespace GoldenHand.Forms.Forms
             bsForms.DataSource = new BindingList<FormViewModel>(sortedList);
             dgForms.DataSource = bsForms;
         }
+
+        private void dgForms_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.dgForms.Rows[e.RowIndex].Cells["Nr"].Value = (e.RowIndex + 1).ToString();
+        }
+        #endregion
     }
 }
