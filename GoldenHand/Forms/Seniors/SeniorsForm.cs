@@ -22,7 +22,7 @@ namespace GoldenHand.Forms.Seniors
         {
             get
             {
-                if(_instance == null)
+                if (_instance == null)
                 {
                     _instance = new SeniorsForm();
                 }
@@ -97,22 +97,26 @@ namespace GoldenHand.Forms.Seniors
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgSeniors.CurrentRow.Cells["SeniorId"].Value);
-            int selectedRowIndex = dgSeniors.CurrentRow.Index;
-
-            const string message = "Na pewno chcesz usunąć tego seniora?";
-            const string caption = "Potwierdzenie usunięcia";
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNo,
-                                         MessageBoxIcon.Question);
-
-
-            if (result == DialogResult.Yes)
+            if (dgSeniors.CurrentRow != null)
             {
-                GoldenHandContext.Instance.Seniors.Remove(GoldenHandContext.Instance.Seniors.Where(x => x.SeniorId == id).FirstOrDefault());
-                GoldenHandContext.Instance.SaveChanges();
-                Init();
+                int id = Convert.ToInt32(dgSeniors.CurrentRow.Cells["SeniorId"].Value);
+                int selectedRowIndex = dgSeniors.CurrentRow.Index;
+
+                const string message = "Na pewno chcesz usunąć tego seniora?";
+                const string caption = "Potwierdzenie usunięcia";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+
+
+                if (result == DialogResult.Yes)
+                {
+                    GoldenHandContext.Instance.Seniors.Remove(GoldenHandContext.Instance.Seniors.Where(x => x.SeniorId == id).FirstOrDefault());
+                    GoldenHandContext.Instance.SaveChanges();
+                    Init();
+                }
             }
+
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -145,11 +149,13 @@ namespace GoldenHand.Forms.Seniors
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-
-            int id = Convert.ToInt32(dgSeniors.CurrentRow.Cells["seniorId"].Value);
-            int selectedRowIndex = dgSeniors.CurrentRow.Index;
-            SeniorDetailsForm srm = new SeniorDetailsForm(id);
-            srm.ShowDialog();
+            if (dgSeniors.CurrentRow != null)
+            {
+                int id = Convert.ToInt32(dgSeniors.CurrentRow.Cells["seniorId"].Value);
+                int selectedRowIndex = dgSeniors.CurrentRow.Index;
+                SeniorDetailsForm srm = new SeniorDetailsForm(id);
+                srm.ShowDialog();
+            }
         }
 
         private void SeniorsForm_FormClosed(object sender, FormClosedEventArgs e)

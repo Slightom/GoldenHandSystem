@@ -38,9 +38,8 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgForms = new System.Windows.Forms.DataGridView();
-            this.lbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgForms = new System.Windows.Forms.DataGridView();
             this.formIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formStatusNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,11 +51,12 @@
             this.seniorAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.seniorPhoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsSeniorForms = new System.Windows.Forms.BindingSource(this.components);
+            this.lbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbGeneral.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgForms)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgForms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSeniorForms)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,6 +156,22 @@
             this.panel1.Size = new System.Drawing.Size(756, 320);
             this.panel1.TabIndex = 3;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AllowDrop = true;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.dgForms, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lbl, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(756, 320);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
             // dgForms
             // 
             this.dgForms.AllowUserToAddRows = false;
@@ -179,35 +195,9 @@
             this.dgForms.Name = "dgForms";
             this.dgForms.ReadOnly = true;
             this.dgForms.RowHeadersVisible = false;
+            this.dgForms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgForms.Size = new System.Drawing.Size(750, 271);
             this.dgForms.TabIndex = 1;
-            // 
-            // lbl
-            // 
-            this.lbl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbl.Location = new System.Drawing.Point(306, 11);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(143, 21);
-            this.lbl.TabIndex = 0;
-            this.lbl.Text = "Historia Zgłoszeń";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.AllowDrop = true;
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.dgForms, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.lbl, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(756, 320);
-            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // formIdDataGridViewTextBoxColumn
             // 
@@ -297,6 +287,17 @@
             // 
             this.bsSeniorForms.DataSource = typeof(GoldenHand.ViewModels.FormViewModel);
             // 
+            // lbl
+            // 
+            this.lbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl.AutoSize = true;
+            this.lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbl.Location = new System.Drawing.Point(306, 11);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(143, 21);
+            this.lbl.TabIndex = 0;
+            this.lbl.Text = "Historia Zgłoszeń";
+            // 
             // SeniorDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,9 +311,9 @@
             this.gbGeneral.ResumeLayout(false);
             this.gbGeneral.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgForms)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgForms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSeniorForms)).EndInit();
             this.ResumeLayout(false);
 

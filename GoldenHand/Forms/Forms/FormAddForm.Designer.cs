@@ -79,9 +79,9 @@
             this.gbGeneral.Controls.Add(this.lblInfo);
             this.gbGeneral.Controls.Add(this.lblSenior);
             this.gbGeneral.Controls.Add(this.lblLp);
-            this.gbGeneral.Location = new System.Drawing.Point(45, 89);
+            this.gbGeneral.Location = new System.Drawing.Point(26, 21);
             this.gbGeneral.Name = "gbGeneral";
-            this.gbGeneral.Size = new System.Drawing.Size(840, 426);
+            this.gbGeneral.Size = new System.Drawing.Size(464, 403);
             this.gbGeneral.TabIndex = 0;
             this.gbGeneral.TabStop = false;
             this.gbGeneral.Text = "Dane";
@@ -292,7 +292,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 583);
+            this.ClientSize = new System.Drawing.Size(529, 447);
             this.Controls.Add(this.gbGeneral);
             this.Name = "FormAddForm";
             this.Text = "Dodaj formularz";

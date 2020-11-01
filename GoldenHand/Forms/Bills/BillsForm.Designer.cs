@@ -235,7 +235,7 @@
         private System.Windows.Forms.BindingSource bsBills;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nr;
         private System.Windows.Forms.DataGridViewTextBoxColumn billId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
     }

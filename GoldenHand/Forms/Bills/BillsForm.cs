@@ -79,35 +79,41 @@ namespace GoldenHand.Forms.Bills
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgBills.CurrentRow.Cells["billId"].Value);
-            int selectedRowIndex = dgBills.CurrentRow.Index;
-            BillEditForm srm = new BillEditForm(id);
-            srm.ReloadBills += (s, ea) =>
+            if (dgBills.CurrentRow != null)
             {
-                Init();
-                dgBills.ClearSelection();
-                dgBills.Rows[selectedRowIndex].Selected = true;
-            };
-            srm.ShowDialog();
+                int id = Convert.ToInt32(dgBills.CurrentRow.Cells["billId"].Value);
+                int selectedRowIndex = dgBills.CurrentRow.Index;
+                BillEditForm srm = new BillEditForm(id);
+                srm.ReloadBills += (s, ea) =>
+                {
+                    Init();
+                    dgBills.ClearSelection();
+                    dgBills.Rows[selectedRowIndex].Selected = true;
+                };
+                srm.ShowDialog();
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgBills.CurrentRow.Cells["billId"].Value);
-            int selectedRowIndex = dgBills.CurrentRow.Index;
-
-            const string message = "Na pewno chcesz usunąć tę fakturę?";
-            const string caption = "Potwierdzenie usunięcia";
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNo,
-                                         MessageBoxIcon.Question);
-
-
-            if (result == DialogResult.Yes)
+            if (dgBills.CurrentRow != null)
             {
-                GoldenHandContext.Instance.Bills.Remove(GoldenHandContext.Instance.Bills.Where(x => x.BillId == id).FirstOrDefault());
-                GoldenHandContext.Instance.SaveChanges();
-                Init();
+                int id = Convert.ToInt32(dgBills.CurrentRow.Cells["billId"].Value);
+                int selectedRowIndex = dgBills.CurrentRow.Index;
+
+                const string message = "Na pewno chcesz usunąć tę fakturę?";
+                const string caption = "Potwierdzenie usunięcia";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+
+
+                if (result == DialogResult.Yes)
+                {
+                    GoldenHandContext.Instance.Bills.Remove(GoldenHandContext.Instance.Bills.Where(x => x.BillId == id).FirstOrDefault());
+                    GoldenHandContext.Instance.SaveChanges();
+                    Init();
+                }
             }
         }
 

@@ -33,6 +33,8 @@ namespace GoldenHand.Forms
         private void Init()
         {
             this._context = GoldenHandContext.Instance;
+            //_tpForms = new TabPage();
+            //ShowFormInTabPage(FormsForm.Instance, _tpForms);
         }
 
         #region events
@@ -82,7 +84,8 @@ namespace GoldenHand.Forms
                 var tabRect = this.tcTabs.GetTabRect(e.Index);
                 tabRect.Inflate(-2, -2);
 
-                var closeImage = new Bitmap($"{ResourcesHelper.ResourcesFilePath}\\{ResourcesHelper.closeButtonName}");
+                //ar closeImage = new Bitmap($"{ResourcesHelper.ResourcesFilePath}\\{ResourcesHelper.closeButtonName}");
+                var closeImage = Properties.Resources.close_16;
                 e.Graphics.DrawImage(closeImage,
                     (tabRect.Right - closeImage.Width),
                     tabRect.Top + (tabRect.Height - closeImage.Height) / 2);
@@ -95,23 +98,31 @@ namespace GoldenHand.Forms
 
         private void TcTabs_MouseDown(object sender, MouseEventArgs e)
         {
-            for (var i = 0; i < this.tcTabs.TabPages.Count; i++)
+            try
             {
-                var tabRect = this.tcTabs.GetTabRect(i);
-                tabRect.Inflate(-2, -2);
-                var closeImage = new Bitmap($"{ResourcesHelper.ResourcesFilePath}\\{ResourcesHelper.closeButtonName}");
-                var imageRect = new Rectangle(
-                    (tabRect.Right - closeImage.Width),
-                    tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
-                    closeImage.Width,
-                    closeImage.Height);
-                if (imageRect.Contains(e.Location))
+                for (var i = 0; i < this.tcTabs.TabPages.Count; i++)
                 {
-                    var frm = tcTabs.TabPages[i].Controls[0] as Form;
-                    frm.Close();
-                    this.tcTabs.TabPages.RemoveAt(i);
-                    break;
+                    var tabRect = this.tcTabs.GetTabRect(i);
+                    tabRect.Inflate(-2, -2);
+                    var closeImage = Properties.Resources.close_16;
+                    var imageRect = new Rectangle(
+                        (tabRect.Right - closeImage.Width),
+                        tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
+                        closeImage.Width,
+                        closeImage.Height);
+                    if (imageRect.Contains(e.Location))
+                    {
+                        var frm = tcTabs.TabPages[i].Controls[0] as Form;
+                        frm.Close();
+                        this.tcTabs.TabPages.RemoveAt(i);
+                        break;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
             }
         }
         #endregion
@@ -119,15 +130,22 @@ namespace GoldenHand.Forms
         #region privateMethods
         private void ShowFormInTabPage(Form frm, TabPage tpP)
         {
-            tcTabs.Controls.Add(tpP);
+            try
+            {
+                tcTabs.Controls.Add(tpP);
 
-            tpP.Text = frm.Text;
-            frm.TopLevel = false;
-            frm.Visible = true;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-            tpP.Controls.Add(frm);
-            tcTabs.SelectedTab = tpP;
+                tpP.Text = frm.Text;
+                frm.TopLevel = false;
+                frm.Visible = true;
+                frm.FormBorderStyle = FormBorderStyle.None;
+                frm.Dock = DockStyle.Fill;
+                tpP.Controls.Add(frm);
+                tcTabs.SelectedTab = tpP;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         #endregion
 
@@ -142,6 +160,11 @@ namespace GoldenHand.Forms
             {
                 tcTabs.SelectedTab = _tpSummary;
             }
+        }
+
+        private void btnBills_Click(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

@@ -77,7 +77,7 @@
             // 
             // FormsRegisted
             // 
-            this.FormsRegisted.HeaderText = "Czeka na wykonanie";
+            this.FormsRegisted.HeaderText = "Oczekujące";
             this.FormsRegisted.Name = "FormsRegisted";
             this.FormsRegisted.ReadOnly = true;
             // 

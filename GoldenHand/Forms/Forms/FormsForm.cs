@@ -48,7 +48,8 @@ namespace GoldenHand.Forms.Forms
         #region PrivateMethods
         private void Init()
         {
-            formViewModelList = MappingHelper.MapFormModelToFormViewModel(GoldenHandContext.Instance.Forms.ToList());
+            var xcx = GoldenHandContext.Instance.Forms.ToList();
+            formViewModelList = MappingHelper.MapFormModelToFormViewModel(xcx);
 
 
             var formsSorted = formViewModelList.OrderByDescending(x => x.RegistrationDate) .ToList();
@@ -85,35 +86,41 @@ namespace GoldenHand.Forms.Forms
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgForms.CurrentRow.Cells["FormId"].Value);
-            int selectedRowIndex = dgForms.CurrentRow.Index;
-            FormEditForm frm = new FormEditForm(id);
-            frm.ReloadForms += (s, ea) =>
+            if (dgForms.CurrentRow != null)
             {
-                Init();
-                dgForms.ClearSelection();
-                dgForms.Rows[selectedRowIndex].Selected = true;
-            };
-            frm.ShowDialog();
+                int id = Convert.ToInt32(dgForms.CurrentRow.Cells["FormId"].Value);
+                int selectedRowIndex = dgForms.CurrentRow.Index;
+                FormEditForm frm = new FormEditForm(id);
+                frm.ReloadForms += (s, ea) =>
+                {
+                    Init();
+                    dgForms.ClearSelection();
+                    dgForms.Rows[selectedRowIndex].Selected = true;
+                };
+                frm.ShowDialog();
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgForms.CurrentRow.Cells["FormId"].Value);
-            int selectedRowIndex = dgForms.CurrentRow.Index;
-
-            const string message = "Na pewno chcesz usunąć ten formularz?";
-            const string caption = "Potwierdzenie usunięcia";
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNo,
-                                         MessageBoxIcon.Question);
-
-
-            if (result == DialogResult.Yes)
+            if (dgForms.CurrentRow != null)
             {
-                GoldenHandContext.Instance.Forms.Remove(GoldenHandContext.Instance.Forms.Where(x => x.FormId == id).FirstOrDefault());
-                GoldenHandContext.Instance.SaveChanges();
-                Init();
+                int id = Convert.ToInt32(dgForms.CurrentRow.Cells["FormId"].Value);
+                int selectedRowIndex = dgForms.CurrentRow.Index;
+
+                const string message = "Na pewno chcesz usunąć ten formularz?";
+                const string caption = "Potwierdzenie usunięcia";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+
+
+                if (result == DialogResult.Yes)
+                {
+                    GoldenHandContext.Instance.Forms.Remove(GoldenHandContext.Instance.Forms.Where(x => x.FormId == id).FirstOrDefault());
+                    GoldenHandContext.Instance.SaveChanges();
+                    Init();
+                }
             }
         }
 

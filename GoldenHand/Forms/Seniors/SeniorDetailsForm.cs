@@ -40,6 +40,8 @@ namespace GoldenHand.Forms.Seniors
             var formsSorted = formsViewModel.OrderByDescending(x => x.RegistrationDate).ToList();
             bsSeniorForms.DataSource = new BindingList<FormViewModel>(formsSorted);
             dgForms.DataSource = bsSeniorForms;
+
+            Style.StyleDataGrid(dgForms);
         }
     }
 }

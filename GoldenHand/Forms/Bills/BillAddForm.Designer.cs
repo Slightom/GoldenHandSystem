@@ -56,7 +56,7 @@
             this.gbGeneral.Controls.Add(this.btnSave);
             this.gbGeneral.Location = new System.Drawing.Point(18, 12);
             this.gbGeneral.Name = "gbGeneral";
-            this.gbGeneral.Size = new System.Drawing.Size(764, 426);
+            this.gbGeneral.Size = new System.Drawing.Size(647, 285);
             this.gbGeneral.TabIndex = 2;
             this.gbGeneral.TabStop = false;
             this.gbGeneral.Text = "Dane";
@@ -158,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(686, 310);
             this.Controls.Add(this.gbGeneral);
             this.Name = "BillAddForm";
             this.Text = "BillAddForm";

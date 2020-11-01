@@ -15,6 +15,8 @@ namespace GoldenHand.Forms.Base
         public BaseAddEditForm()
         {
             InitializeComponent();
+            this.BackColor = SystemColors.Control;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         protected virtual void Save() { }

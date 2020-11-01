@@ -28,98 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tcMain = new System.Windows.Forms.TabControl();
-            this.tpGeneral = new System.Windows.Forms.TabPage();
-            this.btnSummary = new System.Windows.Forms.Button();
-            this.btnBills = new System.Windows.Forms.Button();
-            this.btnSeniors = new System.Windows.Forms.Button();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.btnForms = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.ssMain = new System.Windows.Forms.StatusStrip();
-            this.panel1Main = new System.Windows.Forms.Panel();
             this.tcTabs = new System.Windows.Forms.TabControl();
-            this.tcMain.SuspendLayout();
-            this.tpGeneral.SuspendLayout();
-            this.panel1Main.SuspendLayout();
+            this.btnForms = new System.Windows.Forms.Button();
+            this.btnSeniors = new System.Windows.Forms.Button();
+            this.btnBills = new System.Windows.Forms.Button();
+            this.btnSummary = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tcMain
+            // ssMain
             // 
-            this.tcMain.Controls.Add(this.tpGeneral);
-            this.tcMain.Controls.Add(this.tabPage2);
-            this.tcMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tcMain.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tcMain.Location = new System.Drawing.Point(0, 0);
-            this.tcMain.Name = "tcMain";
-            this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(1184, 70);
-            this.tcMain.TabIndex = 0;
+            this.ssMain.Location = new System.Drawing.Point(0, 767);
+            this.ssMain.Name = "ssMain";
+            this.ssMain.Size = new System.Drawing.Size(1195, 22);
+            this.ssMain.TabIndex = 1;
+            this.ssMain.Text = "statusStrip1";
             // 
-            // tpGeneral
+            // tcTabs
             // 
-            this.tpGeneral.BackColor = System.Drawing.Color.White;
-            this.tpGeneral.Controls.Add(this.btnSummary);
-            this.tpGeneral.Controls.Add(this.btnBills);
-            this.tpGeneral.Controls.Add(this.btnSeniors);
-            this.tpGeneral.Controls.Add(this.splitter1);
-            this.tpGeneral.Controls.Add(this.btnForms);
-            this.tpGeneral.Location = new System.Drawing.Point(4, 26);
-            this.tpGeneral.Name = "tpGeneral";
-            this.tpGeneral.Size = new System.Drawing.Size(1176, 40);
-            this.tpGeneral.TabIndex = 0;
-            this.tpGeneral.Text = "Ogólne";
-            // 
-            // btnSummary
-            // 
-            this.btnSummary.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSummary.Image = global::GoldenHand.Properties.Resources.Salary_32;
-            this.btnSummary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSummary.Location = new System.Drawing.Point(363, 0);
-            this.btnSummary.Name = "btnSummary";
-            this.btnSummary.Size = new System.Drawing.Size(138, 40);
-            this.btnSummary.TabIndex = 4;
-            this.btnSummary.Text = "Podsumowanie";
-            this.btnSummary.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSummary.UseVisualStyleBackColor = true;
-            this.btnSummary.Click += new System.EventHandler(this.btnSummary_Click);
-            // 
-            // btnBills
-            // 
-            this.btnBills.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnBills.Image = global::GoldenHand.Properties.Resources.Contracts_32;
-            this.btnBills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBills.Location = new System.Drawing.Point(243, 0);
-            this.btnBills.Name = "btnBills";
-            this.btnBills.Size = new System.Drawing.Size(120, 40);
-            this.btnBills.TabIndex = 3;
-            this.btnBills.Text = "Faktury";
-            this.btnBills.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBills.UseVisualStyleBackColor = true;
-            this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
-            this.btnBills.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnBills_Click);
-            // 
-            // btnSeniors
-            // 
-            this.btnSeniors.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSeniors.Image = global::GoldenHand.Properties.Resources.Emplyees_32;
-            this.btnSeniors.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSeniors.Location = new System.Drawing.Point(123, 0);
-            this.btnSeniors.Name = "btnSeniors";
-            this.btnSeniors.Size = new System.Drawing.Size(120, 40);
-            this.btnSeniors.TabIndex = 2;
-            this.btnSeniors.Text = "Seniorzy";
-            this.btnSeniors.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSeniors.UseVisualStyleBackColor = true;
-            this.btnSeniors.Click += new System.EventHandler(this.btnSeniors_Click);
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(120, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 40);
-            this.splitter1.TabIndex = 1;
-            this.splitter1.TabStop = false;
+            this.tcTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcTabs.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tcTabs.ItemSize = new System.Drawing.Size(105, 18);
+            this.tcTabs.Location = new System.Drawing.Point(0, 57);
+            this.tcTabs.Name = "tcTabs";
+            this.tcTabs.SelectedIndex = 0;
+            this.tcTabs.Size = new System.Drawing.Size(1195, 710);
+            this.tcTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tcTabs.TabIndex = 0;
+            this.tcTabs.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TcTabs_DrawItem);
+            this.tcTabs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TcTabs_MouseDown);
             // 
             // btnForms
             // 
@@ -129,86 +68,94 @@
             this.btnForms.Location = new System.Drawing.Point(0, 0);
             this.btnForms.Name = "btnForms";
             this.btnForms.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnForms.Size = new System.Drawing.Size(120, 40);
+            this.btnForms.Size = new System.Drawing.Size(120, 57);
             this.btnForms.TabIndex = 0;
             this.btnForms.Text = "Formularze";
             this.btnForms.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnForms.UseVisualStyleBackColor = true;
             this.btnForms.Click += new System.EventHandler(this.btnForms_Click);
             // 
-            // tabPage2
+            // btnSeniors
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1176, 40);
-            this.tabPage2.TabIndex = 0;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.btnSeniors.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSeniors.Image = global::GoldenHand.Properties.Resources.Emplyees_32;
+            this.btnSeniors.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSeniors.Location = new System.Drawing.Point(120, 0);
+            this.btnSeniors.Name = "btnSeniors";
+            this.btnSeniors.Size = new System.Drawing.Size(120, 57);
+            this.btnSeniors.TabIndex = 2;
+            this.btnSeniors.Text = "Seniorzy";
+            this.btnSeniors.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSeniors.UseVisualStyleBackColor = true;
+            this.btnSeniors.Click += new System.EventHandler(this.btnSeniors_Click);
             // 
-            // ssMain
+            // btnBills
             // 
-            this.ssMain.Location = new System.Drawing.Point(0, 839);
-            this.ssMain.Name = "ssMain";
-            this.ssMain.Size = new System.Drawing.Size(1184, 22);
-            this.ssMain.TabIndex = 1;
-            this.ssMain.Text = "statusStrip1";
+            this.btnBills.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBills.Image = global::GoldenHand.Properties.Resources.Contracts_32;
+            this.btnBills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBills.Location = new System.Drawing.Point(240, 0);
+            this.btnBills.Name = "btnBills";
+            this.btnBills.Size = new System.Drawing.Size(120, 57);
+            this.btnBills.TabIndex = 3;
+            this.btnBills.Text = "Faktury";
+            this.btnBills.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBills.UseVisualStyleBackColor = true;
+            this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
+            this.btnBills.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnBills_Click);
             // 
-            // panel1Main
+            // btnSummary
             // 
-            this.panel1Main.Controls.Add(this.tcTabs);
-            this.panel1Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1Main.Location = new System.Drawing.Point(0, 70);
-            this.panel1Main.Name = "panel1Main";
-            this.panel1Main.Size = new System.Drawing.Size(1184, 769);
-            this.panel1Main.TabIndex = 2;
+            this.btnSummary.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSummary.Image = global::GoldenHand.Properties.Resources.Salary_32;
+            this.btnSummary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSummary.Location = new System.Drawing.Point(360, 0);
+            this.btnSummary.Name = "btnSummary";
+            this.btnSummary.Size = new System.Drawing.Size(138, 57);
+            this.btnSummary.TabIndex = 4;
+            this.btnSummary.Text = "Podsumowanie";
+            this.btnSummary.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSummary.UseVisualStyleBackColor = true;
+            this.btnSummary.Click += new System.EventHandler(this.btnSummary_Click);
             // 
-            // tcTabs
+            // panel1
             // 
-            this.tcTabs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcTabs.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tcTabs.ItemSize = new System.Drawing.Size(105, 18);
-            this.tcTabs.Location = new System.Drawing.Point(0, 0);
-            this.tcTabs.Name = "tcTabs";
-            this.tcTabs.SelectedIndex = 0;
-            this.tcTabs.Size = new System.Drawing.Size(1184, 769);
-            this.tcTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tcTabs.TabIndex = 0;
-            this.tcTabs.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TcTabs_DrawItem);
-            this.tcTabs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TcTabs_MouseDown);
+            this.panel1.Controls.Add(this.btnSummary);
+            this.panel1.Controls.Add(this.btnBills);
+            this.panel1.Controls.Add(this.btnSeniors);
+            this.panel1.Controls.Add(this.btnForms);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1195, 57);
+            this.panel1.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 861);
-            this.Controls.Add(this.panel1Main);
+            this.ClientSize = new System.Drawing.Size(1195, 789);
+            this.Controls.Add(this.tcTabs);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ssMain);
-            this.Controls.Add(this.tcMain);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "System Złota Rączka";
-            this.tcMain.ResumeLayout(false);
-            this.tpGeneral.ResumeLayout(false);
-            this.panel1Main.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tcMain;
-        private System.Windows.Forms.TabPage tpGeneral;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.StatusStrip ssMain;
-        private System.Windows.Forms.Button btnSeniors;
-        private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Button btnForms;
-        private System.Windows.Forms.Panel panel1Main;
         private System.Windows.Forms.TabControl tcTabs;
-        private System.Windows.Forms.Button btnBills;
         private System.Windows.Forms.Button btnSummary;
+        private System.Windows.Forms.Button btnBills;
+        private System.Windows.Forms.Button btnSeniors;
+        private System.Windows.Forms.Button btnForms;
+        private System.Windows.Forms.Panel panel1;
     }
 }
